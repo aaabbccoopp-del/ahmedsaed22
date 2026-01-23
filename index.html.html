@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>امين شرطة وزارة الداخلية</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+  height: 100vh;
+}
+
+.main-header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.05); /* تأثير الزجاج */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 10px 25px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 1. استايل الشعار */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.logo-box:hover .logo-circle {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 0 20px #00d2ff;
+}
+
+/* 2. استايل البحث */
+.search-box {
+  flex: 1;
+  max-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-box input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+.search-box input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+.search-box button {
+  position: absolute;
+  left: 10px;
+  background: none;
+  border: none;
+  color: #00d2ff;
+  cursor: pointer;
+}
+
+/* 3. استايل الروابط */
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+.nav-item {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+  position: relative;
+}
+.nav-item:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00d2ff;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+.nav-item:hover::after {
+  width: 60%;
+}
+
+/* 4. استايل البروفايل */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.profile-box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #00d2ff;
+  cursor: pointer;
+}
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #4caf50;
+  border-radius: 50%;
+  border: 2px solid #0f0c29;
+}
+.action-btn {
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.action-btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+/* استجابة الشاشات الصغيرة (Responsive) */
+@media (max-width: 768px) {
+  .nav-links, .search-box {
+      display: none; /* إخفاء البحث والروابط في الجوال لاستبدالها بقائمة */
+  }
+}
+/* إضافة خلفية الصورة للجسم */
+body {
+  background: linear-gradient(rgba(15, 12, 41, 0.7), rgba(15, 12, 41, 0.8)), 
+              url(' https://i.ibb.co/Z69zTVt8/f56c2a5f-09db-44fc-99f2-84131e7af68c.jpg ') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 200vh;
+  background-position: center 30px; 
+  
+  
+}
+#saed{
+  color: #00d2ff;
+  font-size: 1.5em;
+  font-weight: 1000;
+
+}
+ 
+
+/* سكشن الهيرو والمهام */
+.hero-section {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease;
+}
+
+.highlight {
+  color: #00d2ff;
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 50px;
+}
+
+/* تنسيق كروت المهام */
+.tasks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  padding-bottom: 50px;
+}
+
+.task-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.task-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00d2ff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.task-card.active {
+  border-color: #00d2ff;
+  background: rgba(0, 210, 255, 0.05);
+}
+
+.task-icon {
+  font-size: 2.5rem;
+  color: #00d2ff;
+  margin-bottom: 15px;
+}
+
+.task-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.task-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* حالة المهمة */
+.task-status {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-done { background: rgba(76, 175, 80, 0.2); color: #81c784; }
+.status-progress { background: rgba(255, 193, 7, 0.2); color: #ffd54f; }
+.status-waiting { background: rgba(255, 255, 255, 0.1); color: #ccc; }
+
+/* أنيميشن الدخول */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.services-section {
+  padding: 60px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.title-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  backdrop-filter: blur(12px);
+}
+
+/* حركة التوهج عند الوقوف على الكارت */
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff4757;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(0,210,255,0.2), rgba(58,123,213,0.2));
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #00d2ff;
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+}
+
+.service-features li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #00d2ff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* الكارت المميز (جوازات السفر) */
+.highlight-card {
+  border: 1px solid #00d2ff;
+  background: linear-gradient(180deg, rgba(0,210,255,0.1), transparent);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* انميشن الدخول المتتابع */
+.animate-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardAppear 0.8s forwards;
+}
+
+@keyframes cardAppear {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* توزيع الأنيميشن على الكروت */
+.animate-card:nth-child(1) { animation-delay: 0.2s; }
+.animate-card:nth-child(2) { animation-delay: 0.4s; }
+.animate-card:nth-child(3) { animation-delay: 0.6s; }
+.stats-section {
+  padding: 40px 20px 100px; /* مسافة إضافية في الأسفل */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: rgba(0, 0, 0, 0.3); /* خلفية أغمق قليلاً للتباين */
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.stat-icon-box {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 210, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #00d2ff;
+}
+
+.stat-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.stat-info p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+/* شريط التقدم الصغير تحت الإحصائية */
+.stat-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+  border-radius: 10px;
+}
+
+/* تمييز الكارد الأوسط */
+.highlight-stat {
+  background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+}
+.highlight-stat .stat-icon-box {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.highlight-stat .stat-info p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* أنيميشن بسيط */
+.animate-stat {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.portfolio-section {
+  padding: 80px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 25px;
+  text-align: right;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.view-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #00d2ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.view-project-btn:hover {
+  color: #3a7bd5;
+}
+
+.view-project-btn i {
+  transition: transform 0.3s ease;
+}
+
+.view-project-btn:hover i {
+  transform: translateX(-5px);
+}
+
+/* الأنماط الأولية للعناصر التي سيتم تحريكها بواسطة JavaScript */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.owner-section {
+  position: relative;
+  padding: 100px 20px;
+  background: #050505;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* تأثير إضاءة الشرطة في الخلفية */
+.police-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+      radial-gradient(circle at 20% 30%, rgba(0, 50, 255, 0.15), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255, 0, 0, 0.1), transparent 40%);
+  animation: policeFlash 4s infinite alternate;
+}
+
+@keyframes policeFlash {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.owner-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* إطار الصورة */
+.owner-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-frame {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 4px solid #333;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: grayscale(30%); /* لمسة رسمية */
+}
+
+.image-frame:hover {
+  border-color: #00d2ff;
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+}
+
+.badge-icon {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: #ffd700;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* معلومات المالك */
+.owner-info {
+  flex: 2;
+  min-width: 300px;
+}
+
+.rank {
+  color: #00d2ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.owner-name {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.owner-bio {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  border-right: 4px solid #00d2ff;
+  padding-right: 20px;
+}
+
+.signature {
+  margin-bottom: 30px;
+}
+
+.signature p {
+  font-size: 0.9rem;
+  color: #ffd700;
+  margin-bottom: 5px;
+}
+
+.sig-img {
+  width: 150px;
+  filter: invert(1); /* لجعل التوقيع الأسود يظهر أبيض */
+  opacity: 0.8;
+}
+
+.social-contact {
+  display: flex;
+  gap: 20px;
+}
+
+.social-contact a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-contact a:hover {
+  color: #00d2ff;
+  transform: translateY(-5px);
+}
+
+/* التجاوب للجوال */
+@media (max-width: 768px) {
+  .owner-container {
+      flex-direction: column;
+      text-align: center;
+  }
+  .owner-bio {
+      border-right: none;
+      border-bottom: 2px solid #00d2ff;
+      padding-bottom: 20px;
+  }
+}
+.dev-section {
+  position: relative;
+  padding: 100px 20px;
+  background: #0d0d0d;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  border-top: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+/* تأثير الـ Glitch overlay في الخلفية */
+.glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 210, 255, 0.05),
+      rgba(0, 210, 255, 0.05) 2px,
+      transparent 2px,
+      transparent 4px
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  animation: glitchBackground 15s infinite linear;
+}
+
+@keyframes glitchBackground {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.dev-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1100px;
+  width: 100%;
+  flex-wrap: wrap-reverse; /* الصورة على اليمين في البداية */
+}
+
+.dev-info {
+  flex: 2;
+  min-width: 300px;
+}
+
+.dev-role {
+  color: #00d2ff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  position: relative; /* لإعداد الـ glitch */
+}
+.dev-role::before, .dev-role::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d; /* إخفاء النص الأصلي */
+  color: #ff0077; /* لون الـ glitch */
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+.dev-name {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 25px;
+  position: relative; /* لإعداد الـ glitch */
+}
+.dev-name::before, .dev-name::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d; /* إخفاء النص الأصلي */
+  color: #00ff00; /* لون الـ glitch */
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+
+.dev-bio {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.9;
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+  border-left: 4px solid #00d2ff;
+  padding-left: 20px;
+  font-family: 'Courier New', Courier, monospace; /* خط برمجي */
+}
+
+/* تأثير الـ typewriter */
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid #00d2ff; /* مؤشر الكتابة */
+  animation: typing 4s steps(60, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00d2ff; }
+}
+
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.skill-tag {
+  background: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  transition: 0.3s;
+}
+
+.skill-tag:hover {
+  background: #00d2ff;
+  color: #0d0d0d;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+}
+
+.dev-contact {
+  display: flex;
+  gap: 25px;
+}
+
+.dev-contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.dev-contact a:hover {
+  color: #00d2ff;
+  transform: translateX(-5px);
+}
+.dev-contact a i {
+  font-size: 1.8rem;
+}
+
+/* الصورة الرمزية للمطور */
+.dev-avatar {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  order: -1; /* لجعل الصورة على اليسار في الشاشات الكبيرة */
+}
+
+.avatar-circle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+  padding: 10px;
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.5);
+  animation: glowEffect 3s infinite alternate;
+}
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #0d0d0d;
+}
+
+.avatar-glitch-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  animation: avatarGlitch 2s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes glowEffect {
+  0% { box-shadow: 0 0 40px rgba(0, 210, 255, 0.5); }
+  100% { box-shadow: 0 0 60px rgba(58, 123, 213, 0.7); }
+}
+
+@keyframes avatarGlitch {
+  0% { opacity: 0; transform: scale(1); }
+  20% { opacity: 0.2; transform: scale(1.02) translateX(3px); }
+  40% { opacity: 0; transform: scale(1); }
+  60% { opacity: 0.3; transform: scale(1.03) translateX(-3px); }
+  80% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; }
+}
+
+/* التجاوب */
+@media (max-width: 768px) {
+  .dev-container {
+      flex-direction: column;
+      text-align: center;
+  }
+  .dev-avatar {
+      order: 1; /* الصورة تعود للأسفل في الجوال */
+  }
+  .dev-info {
+      order: 2;
+  }
+  .dev-bio {
+      border-left: none;
+      border-bottom: 2px solid #00d2ff;
+      padding-bottom: 20px;
+  }
+  .dev-name {
+      font-size: 2.5rem;
+  }
+  .dev-contact {
+      justify-content: center;
+  }
+}
+.site-footer {
+  position: relative;
+  background: #0d0d0d;
+  color: #fff;
+  padding-top: 50px;
+  margin-top: 100px;
+}
+
+/* أنيميشن الموجات */
+.footer-waves {
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  height: 100px;
+}
+.waves {
+  width: 100%;
+  height: 100px;
+}
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+@keyframes move-forever {
+  0% { transform: translate3d(-90px,0,0); }
+  100% { transform: translate3d(85px,0,0); }
+}
+
+/* محتوى الفووتر */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-box h3, .footer-box h4 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.footer-box p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.icon-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.icon-link:hover {
+  background: #00d2ff;
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 0 15px #00d2ff;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links ul li {
+  margin-bottom: 12px;
+}
+
+.links ul li a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links ul li a:hover {
+  color: #00d2ff;
+  padding-right: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-item i {
+  color: #00d2ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dev-name-footer {
+  color: #00d2ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* استجابة الجوال */
+@media (max-width: 768px) {
+  .footer-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+  .social-icons, .contact-item {
+      justify-content: center;
+  }
+}
+  </style>
+  
+      <header class="main-header">
+          <div class="header-container">
+              
+              <div class="logo-box">
+                  <div class="logo-circle">
+                      <i class="fa-solid fa-bolt-lightning"></i>
+                  </div>
+                  <span>إبداع<b style="color: #00d2ff;">2026</b></span>
+              </div>
+  
+              <div class="search-box">
+                  <input type="text" placeholder="ابحث عن الإلهام...">
+                  <button><i class="fa-solid fa-microphone"></i></button>
+              </div>
+  
+              <nav class="nav-links">
+                  <a href="#" class="nav-item">الرئيسية</a>
+                  <a href="#" class="nav-item">أعمالنا</a>
+                  <a href="#" class="nav-item">الخدمات</a>
+              </nav>
+  
+              <div class="profile-box">
+                  <div class="status-dot"></div>
+                  <img src="https://i.ibb.co/LDg1k26d/Whats-App-Image-2026-01-23-at-5-15-21-PM.jpg alt="Profile">
+                  <button class="action-btn">لوحة التحكم</button>
+              </div>
+  
+          </div>
+      </header>
+      <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="fade-in">  الكابتن سعيد  <span class="highlight">تصاريح جرجا</p>
+        </div>
+    
+        <div class="tasks-container">
+            <div class="task-card">
+                <div class="task-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3> حل المشاكل</h3>
+                <p>نظم مشاريعك المعقدة إلى خطوات بسيطة وقابلة للتنفيذ.</p>
+                <span class="task-status status-done">مكتمل</span>
+            </div>
+    
+            <div class="task-card active">
+                <div class="task-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3> ادارة الاعمال</h3>
+                <p>الكابتن سعيد فى اتم استعدادة لادارة اى مشروع يخص خدمتة </p>
+                <span class="task-status status-progress">جاري العمل</span>
+            </div>
+    
+            <div class="task-card">
+                <div class="task-icon"><i class="fa-solid fa-code"></i></div>
+                <h3> اخرج جواز سفرك </h3>
+                <p> اصنع جواز سفرك اقصى خدمة واسرع وقت مع الباشا <span id="saed">سعيد</span></p>
+                <span class="task-status status-waiting">في الانتظار</span>
+            </div>
+        </div>
+    </section>
+    <section class="services-section">
+      <div class="section-title">
+          <h2>خدمات الجوازات والتصاريح <i class="fa-solid fa-passport"></i></h2>
+          <div class="title-line"></div>
+      </div>
+  
+      <div class="services-container">
+          <div class="service-card animate-card">
+              <div class="service-badge">عاجل</div>
+              <div class="icon-wrapper">
+                  <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h3>تصاريح العمل</h3>
+              <p>استخراج وتجديد تصاريح العمل للمواطنين العاملين بالخارج مع الربط الإلكتروني المباشر.</p>
+              <ul class="service-features">
+                  <li><i class="fa-check-circle fa-solid"></i> تدقيق المستندات</li>
+                  <li><i class="fa-check-circle fa-solid"></i> دفع الرسوم أونلاين</li>
+              </ul>
+          </div>
+  
+          <div class="service-card highlight-card animate-card">
+              <div class="icon-wrapper">
+                  <i class="fa-solid fa-id-card"></i>
+              </div>
+              <h3>جوازات السفر الذكية</h3>
+              <p>إصدار وتجديد جوازات السفر البيومترية الجديدة بأسرع وقت مع خدمة التوصيل للمنزل.</p>
+              <ul class="service-features">
+                  <li><i class="fa-check-circle fa-solid"></i> تحديث الصورة الشخصية</li>
+                  <li><i class="fa-check-circle fa-solid"></i> تمديد الصلاحية</li>
+              </ul>
+          </div>
+  
+          <div class="service-card animate-card">
+              <div class="icon-wrapper">
+                  <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <h3>خدمات الإقامة</h3>
+              <p>إدارة طلبات الإقامة وتأشيرات الخروج والعودة وتعديل المهن بشكل قانوني وسريع.</p>
+              <ul class="service-features">
+                  <li><i class="fa-check-circle fa-solid"></i> فحص الحالة القانونية</li>
+                  <li><i class="fa-check-circle fa-solid"></i> إخطارات التجديد</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+  <section class="stats-section">
+    <div class="stats-container">
+        
+        <div class="stat-card animate-stat">
+            <div class="stat-icon-box">
+                <i class="fa-solid fa-users-check"></i>
+            </div>
+            <div class="stat-info">
+                <h2 class="counter">+50,000</h2>
+                <p>معاملة ناجحة</p>
+            </div>
+            <div class="stat-progress-bar">
+                <div class="progress-fill" style="width: 95%;"></div>
+            </div>
+        </div>
+
+        <div class="stat-card animate-stat highlight-stat">
+            <div class="stat-icon-box">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="stat-info">
+                <h2 class="counter">24</h2>
+                <p>ساعة متوسط التنفيذ</p>
+            </div>
+            <div class="stat-progress-bar">
+                <div class="progress-fill" style="width: 100%; background: #fff;"></div>
+            </div>
+        </div>
+
+        <div class="stat-card animate-stat">
+            <div class="stat-icon-box">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="stat-info">
+                <h2 class="counter">4.9/5</h2>
+                <p>تقييم المستخدمين</p>
+            </div>
+            <div class="stat-progress-bar">
+                <div class="progress-fill" style="width: 98%;"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="portfolio-section">
+  <div class="section-title">
+      <h2>أعمالنا المميزة <i class="fa-solid fa-lightbulb"></i></h2>
+      <div class="title-line"></div>
+  </div>
+
+  <div class="portfolio-grid">
+      <div class="portfolio-card animate-on-scroll" data-animation-delay="0s">
+        <img src="https://i.ibb.co/LDg1k26d/Whats-App-Image-2026-01-23-at-5-15-21-PM.jpg" alt="Whats-App-Image-2026-01-23-at-5-15-21-PM" class="saeed"> 
+          <div class="card-content">
+              <h3>ادارة الاعمال وحل المشاكل</h3>
+              <p>  نخطط ثم نفكر ثم ندير طلبك باحترافية </p>
+              <a href="#" class="view-project-btn">شاهد المشروع <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+      </div>
+
+      <div class="portfolio-card animate-on-scroll" data-animation-delay="0.1s">
+        <img src="https://i.ibb.co/5PkHppq/8e2d31f1-60f2-4d4a-ab3c-140a86fd0ff0.jpg" alt="8e2d31f1-60f2-4d4a-ab3c-140a86fd0ff0"  style="height: 400px;">        
+          <div class="card-content">
+              <h3>خدمة 24 ساعة</h3>
+              <p> خدمتنا من افضل الخدم فى المحافظة</p>
+              <a href="#" class="view-project-btn">شاهد المشروع <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+      </div>
+
+      <div class="portfolio-card animate-on-scroll" data-animation-delay="0.2s">
+        <img src="https://i.ibb.co/Lh2gfzJy/Whats-App-Image-2026-01-23-at-6-37-16-PM.jpg" alt="Whats-App-Image-2026-01-23-at-6-37-16-PM">
+          <div class="card-content">
+              <h3> علاقاتنا القوية مع النواب </h3>
+              <p>تسجيل خدامتنا فى مجلس الشعب </p>
+              <a href="#" class="view-project-btn">شاهد المشروع <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+      </div>
+
+      <div class="portfolio-card animate-on-scroll" data-animation-delay="0.3s">
+        <img src="https://i.ibb.co/xSwHs7Gy/image.jpg" alt="التعاون">
+          <div class="card-content">
+              <h3> التعاون</h3>
+              <p> تعاون التيم من اجل تلبية مصلحتك </p>
+              <a href="#" class="view-project-btn">شاهد المشروع <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+      </div>
+
+      <div class="portfolio-card animate-on-scroll" data-animation-delay="0.4s">
+        <img src="https://i.ibb.co/gMhKCWYh/images.jpg" alt="images">
+          <div class="card-content">
+              <h3> خدماتنا المميزة المنظمة </h3>
+              <p>سافر بامان</p>
+              <a href="#" class="view-project-btn">شاهد المشروع <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+      </div>
+
+      <div class="portfolio-card animate-on-scroll" data-animation-delay="0.5s">
+        <img src="https://i.ibb.co/RTfCbTv2/images-1.jpg" alt="images (1)">
+          <div class="card-content">
+              <h3> اساليب حديثة  </h3>
+              <p>استخدام اسرع واحدث الاساليب لقضاء مصلحتك</p>
+              <a href="#" class="view-project-btn">شاهد المشروع <i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="owner-section">
+  <div class="police-bg-overlay"></div> <div class="owner-container animate-on-scroll">
+      <div class="owner-image">
+          <div class="image-frame">
+            <img src="https://i.ibb.co/srrttmy/Whats-App-Image-2026-01-23-at-7-05-03-PM.jpg" alt="Whats App Image 2026 01 23 at 7 05 03 PM">
+              <div class="badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          </div>
+      </div>
+
+      <div class="owner-info">
+          <h4 class="rank">المدير العام</h4>
+          <h1 class="owner-name">الباشا <span class="highlight">سعيد</span></h1>
+          <p class="owner-bio">
+              قائد محنك بخبرة تمتد لسنوات في إدارة الخدمات اللوجستية وتصاريح العمل. 
+              يؤمن "الباشا سعيد" بأن الدقة والسرعة هما أساس النجاح، ويسعى دائماً لتطوير 
+              منظومة العمل لتواكب أحدث التقنيات العالمية في عام 2026.
+          </p>
+          
+          <div class="signature">
+              <p>توقيع الإدارة</p>
+             
+          </div>
+
+          <div class="social-contact">
+              <a href="01003625089" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-solid fa-phone-volume"></i></a>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="dev-section">
+  <div class="glitch-overlay"></div>
+  <div class="dev-container animate-on-scroll">
+      
+      <div class="dev-info">
+          <h4 class="dev-role" data-text="مطور الواجهة الأمامية"></h4>
+          <h1 class="dev-name" data-text="أحمد سعيد"></h1>
+          <p class="dev-bio">
+              <span class="typewriter-text" data-text="المهندس وراء هذا الإبداع. متخصص في بناء تجارب مستخدم مذهلة، وتحويل الأفكار المعقدة إلى واجهات سهلة الاستخدام وديناميكية. شغفه يكمن في دمج أحدث التقنيات مع التصميم الفني."></span>
+          </p>
+          
+          <div class="skills-grid">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript ES6+</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">UI/UX</span>
+              <span class="skill-tag">Animation</span>
+          </div>
+
+          <div class="dev-contact">
+              <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+      </div>
+
+      <div class="dev-avatar">
+          <div class="avatar-circle">
+            <img src="https://i.ibb.co/gb43v9MN/Whats-App-Image-2026-01-23-at-7-13-39-PM.jpg" alt="أحمد سعيد">
+              <div class="avatar-glitch-effect"></div>
+          </div>
+      </div>
+
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0, 210, 255, 0.3)" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 210, 255, 0.2)" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0, 210, 255, 0.1)" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255, 255, 255, 0.05)" />
+          </g>
+      </svg>
+  </div>
+
+  <div class="footer-content">
+      <div class="footer-grid">
+          
+          <div class="footer-box about">
+              <h3>مؤسسة <span class="highlight">الباشا</span></h3>
+              <p>الرائدة في خدمات الجوازات وتصاريح العمل لعام 2026. نحن نجمع بين الخبرة الإدارية والحلول الرقمية المبتكرة.</p>
+              <div class="social-icons">
+                  <a href="#" class="icon-link"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#" class="icon-link"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="#" class="icon-link"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" class="icon-link"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+          </div>
+
+          <div class="footer-box links">
+              <h4>روابط سريعة</h4>
+              <ul>
+                  <li><a href="#">الرئيسية</a></li>
+                  <li><a href="#">خدمات الجوازات</a></li>
+                  <li><a href="#">تصاريح العمل</a></li>
+                  <li><a href="#">فريق العمل</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-box contact">
+              <h4>اتصل بنا</h4>
+              <div class="contact-item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>سوهاج, مصر, ,مركز جرجا ,الغباشى</span>
+              </div>
+              <div class="contact-item">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>+201003625089</span>
+              </div>
+              <div class="contact-item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>info@pasha-saeed.com</span>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="footer-bottom">
+          <p>© 2026 جميع الحقوق محفوظة لـ <b>الباشا سعيد</b></p>
+          <p class="dev-credit">تم التصميم والتطوير بواسطة <span class="dev-name-footer">أحمد سعيد</span></p>
+      </div>
+  </div>
+</footer>
+
+  <script src="package.json">
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+  const observerOptions = {
+      root: null, // هو إطار العرض (viewport)
+      rootMargin: '0px',
+      threshold: 0.2 // عندما يكون 20% من العنصر مرئياً
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              // العنصر مرئي
+              const delay = parseFloat(entry.target.dataset.animationDelay || 0);
+              setTimeout(() => {
+                  entry.target.classList.add('is-visible');
+              }, delay * 1000); // تحويل التأخير من ثواني إلى مللي ثواني
+              observer.unobserve(entry.target); // إيقاف المراقبة بعد ظهور العنصر
+          }
+      });
+  }, observerOptions);
+
+  animateOnScrollElements.forEach(element => {
+      observer.observe(element);
+  });
+});
+// تأثير وميض أضواء الشرطة عند التمرير
+window.addEventListener('scroll', () => {
+  const overlay = document.querySelector('.police-bg-overlay');
+  let scrollPos = window.scrollY;
+  
+  // تغيير كثافة الإضاءة بناءً على التمرير
+  overlay.style.opacity = 0.3 + (Math.sin(scrollPos / 100) * 0.2);
+});// Function for text glitch effect (CSS-based animation trigger)
+function applyGlitchEffect(element) {
+    if (!element) return;
+    const originalText = element.dataset.text; // Get text from data-text attribute
+    
+    // Create random glitch text
+    function createGlitchText(text) {
+        let result = '';
+        for (let i = 0; i < text.length; i++) {
+            result += Math.random() < 0.3 ? String.fromCharCode(Math.floor(Math.random() * 94) + 33) : text[i];
+        }
+        return result;
+    }
+
+    const glitchDuration = 200; // ms
+    const glitchInterval = 50; // ms
+
+    let glitchIntervalId;
+
+    function startGlitch() {
+        if (glitchIntervalId) clearInterval(glitchIntervalId);
+
+        let counter = 0;
+        glitchIntervalId = setInterval(() => {
+            if (counter >= (glitchDuration / glitchInterval)) {
+                clearInterval(glitchIntervalId);
+                element.innerHTML = originalText; // Reset to original text
+                return;
+            }
+            element.innerHTML = createGlitchText(originalText);
+            counter++;
+        }, glitchInterval);
+    }
+
+    // Trigger glitch on hover (for better UX, could be on scroll too)
+    element.addEventListener('mouseenter', startGlitch);
+    // Optionally trigger on load for initial effect
+    // startGlitch(); // Uncomment if you want it to glitch on page load
+}
+
+// Apply glitch to roles and names
+const devRole = document.querySelector('.dev-role');
+const devName = document.querySelector('.dev-name');
+applyGlitchEffect(devRole);
+applyGlitchEffect(devName);
+
+
+// Typewriter Effect for bio
+function applyTypewriterEffect(element) {
+    const text = element.dataset.text;
+    let i = 0;
+    element.innerHTML = ''; // Clear existing text
+
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 50); // Typing speed in ms
+        }
+    }
+    type();
+}
+
+const typewriterElement = document.querySelector('.typewriter-text');
+// Only apply if element is visible (using IntersectionObserver)
+const typewriterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            applyTypewriterEffect(entry.target);
+            typewriterObserver.unobserve(entry.target); // Only type once
+        }
+    });
+}, { threshold: 0.5 }); // Trigger when 50% of element is visible
+
+if (typewriterElement) {
+    typewriterObserver.observe(typewriterElement);
+}
+
+// --- Existing IntersectionObserver for general animate-on-scroll elements ---
+document.addEventListener('DOMContentLoaded', () => {
+    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observerOptions = {
+        root: null, // is the viewport
+        rootMargin: '0px',
+        threshold: 0.2 // when 20% of the item is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseFloat(entry.target.dataset.animationDelay || 0);
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                }, delay * 1000);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animateOnScrollElements.forEach(element => {
+        observer.observe(element);
+    });
+});
+document.querySelectorAll('.links a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  });
+});
+   </script>
+  </body>
+ 
+ 
+  </html>
+    
+   
+    
+
+
